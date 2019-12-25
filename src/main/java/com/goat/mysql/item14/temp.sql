@@ -1,12 +1,23 @@
 /**
   第14章 [使用子查询]
-
-
 */
-SELECT * FROM products;
+SELECT * FROM customers;
 SELECT * FROM orders;
 SELECT * FROM orderitems;
-SELECT * FROM customers;
+
+SELECT * FROM products;
+SELECT * FROM vendors;
+
+SELECT * FROM productnotes;
+
+
+# in查询相当于多个or条件的叠加，这个比较好理解
+select * from vendors where vend_id in (1001, 1002, 1003);
+SELECT * FROM vendors WHERE vend_id = 1001 OR vend_id = 1002 OR vend_id = 1003;
+
+select * from vendors where vend_id not in (1001, 1002, 1003);
+select * from vendors where vend_id != 1001 and vend_id != 1002 and vend_id != 1003;
+
 
 
 #【14.2  利用子查询进行过滤】
