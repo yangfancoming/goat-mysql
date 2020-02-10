@@ -31,6 +31,7 @@ select vend_id, count(*) as num_prods from products where prod_price>10 group by
 select vend_id, count(*) as num_prods from products  group by vend_id having count(*) >= 2;
 
 select * from orderitems;
+SELECT order_item,avg(item_price) FROM orderitems GROUP BY order_item HAVING avg(item_price)>10;
 # 【分组和排序】
 
 select order_num,sum(quantity*item_price) as ordertotal

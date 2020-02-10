@@ -25,3 +25,9 @@ create table table1
   `sname` INTEGER(11) DEFAULT NULL
 )ENGINE=FEDERATED DEFAULT CHARSET=utf8 connection = 'mysql://shengang:123456@192.168.10.120:3306/ptms/table1';
 
+
+#  远程访问mysql 报错： Server returns invalid timezone. Go to 'Advanced' tab and set 'serverTimezone' property manually.
+#  原因： mysql的时区不对，更改时区
+show variables like'%time_zone';
+set global time_zone='+8:00';
+# ps:当数据库在执行其他任务时，set global time_zone='+8:00'不起作用，还会显示是 SYSTEM ，但idea已可以连接mysql,如图：
