@@ -41,3 +41,11 @@ show status like 'Threads%';
 # | Threads_created   | 23    |  Threads_created表示创建过的线程数
 # | Threads_running   | 2     |  当前激活的线程连接数
 # +-------------------+-------+
+
+# 全局查看wait_timeout值  其意思为mysql的一个connection空闲时间超过8小时，mysql会自动断开该连接
+show global variables like'%wait_timeout%' ;
+set global wait_timeout = 10;
+# 进入myslq 控制台
+docker exec -it mysql2 /bin/bash
+mysql -uroot -p12345
+
